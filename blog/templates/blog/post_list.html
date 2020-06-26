@@ -7,16 +7,34 @@
             <h1><a href="/">Django Girls Blog</a></h1>
         </div>
 
+            {% for post in posts %}
+                {{post}}
+            {% endfor %}
+
         <div>
-            <p>published: 24.06.2020, 10:00</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Aenean eu leo quam. こんにちは！ よろしくお願いします！ </p>
+            <p>作成日: 2020/06/24, 10:00</p>
+            <h3><a href="">My first post</a></h3>
+            <p> こんにちは！ よろしくお願いします！ </p>
         </div>
 
         <div>
-            <p>公開日: 2020/06/24, 10:00</p>
-            <h2><a href="">2番目の投稿</a></h2>
+            <p>作成日: 2020/06/24, 10:00</p>
+            <h4><a href="">2番目の投稿</a></h4>
             <p> こんにちは！ よろしくお願いします！ </p>
+            <p> カレーパンください。 </p>
         </div>
+
+        <div>
+            <h1><a href="/">Django Girls Blog</a></h1>
+        </div>
+        
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
+
     </body>
 </html>
