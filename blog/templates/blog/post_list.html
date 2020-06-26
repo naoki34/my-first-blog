@@ -1,11 +1,14 @@
+{% load static %}
 <html>
     <head>
         <title>Django Girls blog</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
     <body>
         <div>
             <h1><a href="/">Django Girls Blog</a></h1>
-            <h1><a href="/">youtuberになりたい人へ</a></h1>
         </div>
 
             {% for post in posts %}
@@ -14,25 +17,25 @@
 
         <div>
             <p>作成日: 2020/06/24, 10:00</p>
-            <h3><a href="">My first post</a></h3>
+            <h2><a href="">My first post</a></h2>
             <p> こんにちは！ よろしくお願いします！ </p>
         </div>
 
         <div>
             <p>作成日: 2020/06/24, 10:00</p>
-            <h4><a href="">2番目の投稿</a></h4>
+            <h3><a href="">2番目の投稿</a></h3>
             <p> こんにちは！ よろしくお願いします！ </p>
             <p> カレーパンください。 </p>
         </div>
 
         <div>
-            <h1><a href="/">Django Girls Blog</a></h1>
+            <h5><a href="/">Django Girls Blog</a></h5>
         </div>
         
         {% for post in posts %}
             <div>
                 <p>published: {{ post.published_date }}</p>
-                <h2><a href="">{{ post.title }}</a></h2>
+                <h6><a href="">{{ post.title }}</a></h6>
                 <p>{{ post.text|linebreaksbr }}</p>
             </div>
         {% endfor %}
